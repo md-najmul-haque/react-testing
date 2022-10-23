@@ -5,14 +5,22 @@
 import { render, screen } from "@testing-library/react"
 import { Greet } from "./greet"
 
-test('Greet render correctly', () => {
-    render(<Greet />)
-    const textElement = screen.getByText('Hello')
-    expect(textElement).toBeInTheDocument()
-})
+describe('Greet', () => {
 
-test('Greet render correctly followed by name', () => {
-    render(<Greet name='Najmul' />)
-    const textElement = screen.getByText('Hello Najmul')
-    expect(textElement).toBeInTheDocument()
+    test('Greet render correctly', () => {
+        render(<Greet />)
+        const textElement = screen.getByText('Hello')
+        expect(textElement).toBeInTheDocument()
+    })
+
+    describe('Nested', () => {
+
+        test('Greet render correctly followed by name', () => {
+            render(<Greet name='Najmul' />)
+            const textElement = screen.getByText('Hello Najmul')
+            expect(textElement).toBeInTheDocument()
+        })
+    })
+
+
 })
