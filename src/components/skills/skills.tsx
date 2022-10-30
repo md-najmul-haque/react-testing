@@ -3,7 +3,6 @@ import { SkillProps } from "../types/skill.types"
 export const Skills = ({ skills }: SkillProps) => {
 
     return (
-
         <>
             <ul>
                 {
