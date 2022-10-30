@@ -29,6 +29,21 @@ describe('Application', () => {
         const nameElement3 = screen.getByPlaceholderText('Fullname')
         expect(nameElement3).toBeInTheDocument()
 
+        const nameElement4 = screen.getByDisplayValue('Najmul')
+        expect(nameElement4).toBeInTheDocument()
+
+        const titleElement = screen.getByTitle('close')
+        expect(titleElement).toBeInTheDocument()
+
+        const altElement = screen.getByAltText('a person with a laptop')
+        expect(altElement).toBeInTheDocument()
+
+        const customElement = screen.getByTestId('custom-element')
+        expect(customElement).toBeInTheDocument()
+
+        const paragraphElement = screen.getByText('All fields are mandatory')
+        expect(paragraphElement).toBeInTheDocument()
+
         const termsElement = screen.getByLabelText('I agree to the terms and conditions')
         expect(termsElement).toBeInTheDocument()
 
