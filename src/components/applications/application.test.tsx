@@ -35,7 +35,9 @@ describe('Application', () => {
         const titleElement = screen.getByTitle('close')
         expect(titleElement).toBeInTheDocument()
 
-        const altElement = screen.getByAltText('a person with a laptop')
+        const altElement = screen.getByAltText('son with', {
+            exact: false
+        })
         expect(altElement).toBeInTheDocument()
 
         const customElement = screen.getByTestId('custom-element')
