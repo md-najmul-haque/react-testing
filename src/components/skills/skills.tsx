@@ -1,6 +1,9 @@
+import { useState } from "react"
 import { SkillProps } from "../types/skill.types"
 
 export const Skills = ({ skills }: SkillProps) => {
+
+    const [login, setLoggedIn] = useState(false)
 
     return (
         <>
@@ -11,6 +14,11 @@ export const Skills = ({ skills }: SkillProps) => {
                     })
                 }
             </ul>
+
+            {
+                login ? <button>start learning</button> : <button onClick={() => { setLoggedIn(true) }}>login</button>
+            }
+
         </>
     )
 }
