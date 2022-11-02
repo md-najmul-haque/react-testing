@@ -1,9 +1,14 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { SkillProps } from "../types/skill.types"
 
 export const Skills = ({ skills }: SkillProps) => {
 
     const [login, setLoggedIn] = useState(false)
+
+    useEffect(() => {
+        setTimeout(() => { setLoggedIn(true) }, 1001)
+
+    }, [])
 
     return (
         <>
